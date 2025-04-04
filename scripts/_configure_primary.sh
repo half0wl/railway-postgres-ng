@@ -58,11 +58,11 @@ log_ok "Created repmgr config ->> '$REPMGR_CONF_FILE'"
 
 # Create replication configuration file
 cat >"$PG_REPLICATION_CONF_FILE" <<EOF
-max_wal_senders = 20
-max_replication_slots = 20
-wal_keep_size = 512MB
-wal_level = replica
+wal_level = logical
+wal_keep_size = 128MB
 wal_log_hints = on
+max_replication_slots = 5
+max_wal_senders = 10
 hot_standby = on
 archive_mode = on
 archive_command = '/bin/true'
