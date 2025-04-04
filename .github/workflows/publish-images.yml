@@ -51,7 +51,7 @@ jobs:
       - name: Build and Publish
         uses: docker/build-push-action@v5
         with:
-          context: ./docker
+          context: ./
           file: ./docker/${{ matrix.dockerfile }}
           platforms: linux/arm64, linux/amd64
           push: true
